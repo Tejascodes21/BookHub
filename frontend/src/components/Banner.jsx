@@ -96,7 +96,7 @@ const Banner = () => {
                 </div>
               </form>
 
-              {/*{/*STATS
+              {/*{/* STATS 
               <div className={stateContainer}>
                 {[
                   { number: "50k+", label: "Tickets" },
@@ -108,8 +108,8 @@ const Banner = () => {
                     <div className={statLabel}>{state.label}</div>
                   </div>
                 ))}
-              </div>*/ //stats not showing 
-}
+              </div>
+              */}
             </div>
           </div>
         </div>
