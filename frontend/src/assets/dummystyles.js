@@ -158,7 +158,7 @@ export const headerText =
 
   // assets/dummy/dummystyles.js
 
-export const ourBestSellersStyles = {
+export const OurBestSellers = {
   section: "py-12 md:py-16 bg-gray-50",
   container: "container mx-auto px-4 md:px-6",
 

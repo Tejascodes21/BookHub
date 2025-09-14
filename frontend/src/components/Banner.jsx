@@ -13,7 +13,19 @@ import {
   inputWrapper,
   searchButton,
   inputField,
+  statsContainer,
+  statBox,
+  statLabel,
+  statNumber,
+  imageSection,
+  imageWrapper,
+  imageStyle,
+  overlayEffect,
+  scrollTextSection,
+  scrollText,
 } from "../assets/dummystyles";
+
+import img from "../assets/banner1.png";
 
 const Banner = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -96,20 +108,35 @@ const Banner = () => {
                 </div>
               </form>
 
-              {/*{/* STATS 
-              <div className={stateContainer}>
+              {/* STATS */}
+              <div className={statsContainer}>
                 {[
                   { number: "50k+", label: "Tickets" },
                   { number: "1.2M", label: "Readers" },
                   { number: "240+", label: "Topics" },
-                ].map((state, i) => (
-                  <div key={i} className="flex flex-col items-center">
-                    <div className={statBox}>{state.number}</div>
-                    <div className={statLabel}>{state.label}</div>
+                ].map((stat, i) => (
+                  <div className={statBox} key={i}>
+                    <div className={statNumber}>{stat.number}</div>
+                    <div className={statLabel}>{stat.label}</div>
                   </div>
                 ))}
               </div>
-              */}
+            </div>
+
+            {/* IMAGES*/}
+            <div className={imageSection}>
+              <div className={imageWrapper}>
+                <img src={img} alt="Image Banner" className={imageStyle} />
+                <div className={overlayEffect} />
+              </div>
+            </div>
+          </div>
+
+          {/* FOOTER TEXTS*/}
+          <div className={scrollTextSection}>
+            <div className={scrollText}>
+              Currated Collections • Award-Winning Authors • Critical Analysis •
+              Cultural Perspective
             </div>
           </div>
         </div>
