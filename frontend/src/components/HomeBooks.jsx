@@ -2,12 +2,14 @@ import React from "react";
 import { homeBooksStyles as styles } from "../assets/dummystyles";
 import { useCart } from "../CartContext/CartContext";
 import { hBooks } from "../assets/dummydata";
-import { Star } from "lucide-react"; // for star icons
+import { Star ,Minus, Plus, ShoppingCart, ArrowRight} from "lucide-react"; 
+import {Link} from "react-router-dom"
+
 
 const HomeBooks = () => {
   const { cart, dispatch } = useCart();
 
-  const inCart = (id) => cart?.items?.some((item) => item.id === id);
+  const inCart = (id) => cart?.items?.find((item) => item.id === id);
 
   const handleAdd = (book) =>
     dispatch({ type: "ADD_ITEM", payload: { ...book, quantity: 1 } });
@@ -51,9 +53,35 @@ const HomeBooks = () => {
                   <p className={styles.author}>{book.author} Best author in this week</p>
 
                   <span className={styles.actualPrice}>₹{book.price}</span>
+
+                  {item ? (
+                    <div className={styles.qtyBox}>
+                      <button onClick={() => handleDec(book.id)}
+                      className={styles.qtBtn}>
+                        <Minus className = ' h-5 w-5'/>
+                      </button>
+                      <span className= "text-gray-700">{item.quantity}</span>
+                       <button onClick={() => handleInc(book.id)}
+                      className={styles.qtBtn}>
+                        <Plus className = ' h-5 w-5'/>
+                      </button>
+                    </div>
+                  ): (
+                    <button onClick={()=> handleAdd(book)} className={styles.addBtn}>
+                      <ShoppingCart className=" h-5 w- 5"/>
+                      <span>Add to Cart</span>
+                    </button>
+                  )}
                 </div>
               );
             })}
+          </div>
+
+          <div className={styles.viewBtnWrapper}>
+            <Link to={'/books'} className={styles.viewBtn}>
+            <span>View All Books</span>
+            <ArrowRight className={styles.viewIcon}/>
+            </Link>
           </div>
         </div>
       </div>
