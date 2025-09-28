@@ -174,7 +174,7 @@ const Navbar = () => {
                     )}
                   </Link>
                   <Link
-                    to="login"
+                    to="/login"
                     className=" p-2 group"
                     onClick={() => setIsOpen(false)}
                   >

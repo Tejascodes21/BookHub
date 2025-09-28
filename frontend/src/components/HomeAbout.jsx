@@ -1,11 +1,10 @@
 import React from "react";
 import { homeAboutStyles as s } from "../assets/dummystyles";
 import HomeAboutImage from "../assets/HomeAboutImage.png";
-import {hastats} from "../assets/dummydata";
-import {Link} from "react-router-dom"
+import { hastats } from "../assets/dummydata";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import {featuredBooks} from "../assets/dummydata"
-
+import { featuredBooks } from "../assets/dummydata";
 
 const HomeAbout = () => {
   return (
@@ -40,19 +39,19 @@ const HomeAbout = () => {
               and transport them to new world.
             </p>
             <div className={s.statGrid}>
-                {hastats.map((stat, index) =>(
-                    <div className={s.statcard} key={index}>
-                        <div className={s.statIconwrap}>
-                            <stat.icon className={s.statIcon}/>
-                            </div>
-                            <h3 className={s.statValue}>{stat.value}</h3>
-                            <p className={s.statLabel}>{stat.label}</p>
-                    </div>
-                    ))}
+              {hastats.map((stat, index) => (
+                <div className={s.statcard} key={index}>
+                  <div className={s.statIconwrap}>
+                    <stat.icon className={s.statIcon} />
+                  </div>
+                  <h3 className={s.statValue}>{stat.value}</h3>
+                  <p className={s.statLabel}>{stat.label}</p>
+                </div>
+              ))}
             </div>
             <Link to="/about" className={s.aboutButton}>
-            <span>Learn More About Us</span>
-            <ArrowRight className={s.arrowIcon}/>
+              <span>Learn More About Us</span>
+              <ArrowRight className={s.arrowIcon} />
             </Link>
           </div>
         </div>
@@ -60,26 +59,32 @@ const HomeAbout = () => {
           <h2 className={s.sectionHeader}> Legendary Volumes</h2>
           <div className={s.headerUnderline}></div>
           <p className={s.headerText}>
-            Handpicked recommendations from our literary experts that you won't want to miss.
+            Handpicked recommendations from our literary experts that you won't
+            want to miss.
           </p>
         </div>
-        <div className={s.bookgrid}>
+        <div className={s.bookGrid}>
           {featuredBooks.map((book, index) => (
             <div className={s.bookCardWrap} key={index}>
               <div className={s.bookCardGlow}></div>
               <div className={s.bookCard}>
                 <div className={s.bookImageWrapper}>
-                  <img src={book.image} alt={book.title} className={s.bookImage} />
+                  <img
+                    src={book.image}
+                    alt={book.title}
+                    className={s.bookImage}
+                  />
                 </div>
                 <div className={s.bookContent}>
                   <h3 className={s.bookTitle}>{book.title}</h3>
                   <p className={s.bookAuthor}>{book.author}</p>
                   <p className={s.bookDesc}>{book.description}</p>
-                  </div>
-
+                  <Link to="/books" className={s.discoverLink}>
+                    <span>Discover</span>
+                    <ArrowRight className={s.arrowSmall} />
+                  </Link>
+                </div>
               </div>
-
-
             </div>
           ))}
         </div>
