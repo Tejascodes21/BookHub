@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Signup } from "../assets/dummystyles";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, User, Mail, Lock } from "lucide-react";
+import { ArrowLeft, User, Mail, Lock, EyeOff ,Eye} from "lucide-react";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -73,7 +73,7 @@ const SignUp = () => {
         <form onSubmit={handleSubmit} className={Signup.form}>
           <div>
             <label className={Signup.label}>UserName</label>
-            <div clasName={Signup.inputWrapper}>
+            <div className={Signup.inputWrapper}>
               <User className={Signup.iconLeft} />
               <input
                 type="text"
@@ -90,7 +90,7 @@ const SignUp = () => {
 
           <div>
             <label className={Signup.label}>Email</label>
-            <div clasName={Signup.inputWrapper}>
+            <div className={Signup.inputWrapper}>
               <Mail className={Signup.iconLeft} />
               <input
                 type="email"
@@ -107,7 +107,7 @@ const SignUp = () => {
 
           <div>
             <label className={Signup.label}>Password</label>
-            <div clasName={Signup.inputWrapper}>
+            <div className={Signup.inputWrapper}>
               <Lock className={Signup.iconLeft} />
               <input
                 type={showPassword ? "text" : "password"}
@@ -119,9 +119,22 @@ const SignUp = () => {
                   setFormData({ ...formData, password: e.target.value })
                 }
               />
+              <button type='button' onClick={() => setShowPassword(!showPassword)}
+              className={Signup.togglePassword}>
+                {showPassword ? <EyeOff className=' h-5 w-5'/> :<Eye className='h-5 w-5'/>}
+              </button> 
             </div>
           </div>
+          <button type='submit' className={Signup.submitBtn}>
+            Create Account
+          </button>
         </form>
+        <div className={Signup.footerText}>
+          Already have an account ? {' '}
+          <Link to="/login" className={Signup.link}>
+          Sign in
+          </Link>
+        </div>
       </div>
     </div>
   );
