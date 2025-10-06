@@ -96,17 +96,39 @@ const Cart = () => {
                             </button>
                             
                 </div>
+                <span className={styles.itemToatal}>
+                  ₹{(item.price * item.quantity).toFixed(2)}
+                  </span>
                 </div>
+                <span className={styles.priceperItem}>
+                  ₹{(item.price.toFixed(2))} each
+                  </span>
+
                 </div>
                 </div>
                 </div>
                 </div>
               ))}
             </div>
+            <div className={styles.summaryCard}>
+              <h2 className={styles.summaryTitle}>Order Summary</h2>
+              <div className={styles.summaryBreakdown}>
+                <div classname={styles.summaryRow}>
+                  <span className={styles.summaryLabel}>
+                    Subtotal ({cart.items.length} items)
+                    </span>
+                    <span className={styles.summaryValue}>₹{total.toFixed(2)}</span>
+
+                </div>
+          
+          </div>
+          </div>
           </div>
         )}
       </div>
     </div>
+    
+    
   );
 };
 
