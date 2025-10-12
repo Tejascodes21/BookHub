@@ -120,9 +120,25 @@ const Cart = () => {
                     <span className={styles.summaryValue}>₹{total.toFixed(2)}</span>
 
                 </div>
-          
+    <div className={styles.summaryRow}>
+      <span clssName={styles.summaryLabel}>Shipping</span>
+      <span className  ={styles.summaryShipping}>Free</span> 
+      </div>     
+      <div className={styles.summaryRow}>
+        <span clssName={styles.summaryLabel}>Taxes</span>
+      <span className  ={styles.summaryShipping}>Calculated at checkout</span> 
+        </div>
+          </div>
+          <div className={styles.summaryTotalSection}>
+            <div className={styles.totalRow}>
+              <span className={styles.summaryLabel}>
+                Total
+              </span>
+              <span className={styles.totalAmount}>₹{total.toFixed(2)}</span>
           </div>
           </div>
+          </div>
+
           </div>
         )}
       </div>
