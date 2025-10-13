@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { styles } from "../assets/dummystyles";
-import { ShoppingBag, BookOpen, Trash, Minus, Plus } from "lucide-react";
+import { ShoppingBag, BookOpen, Trash, Minus, Plus, ArrowRight } from "lucide-react";
 import { useCart } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 
@@ -96,11 +96,11 @@ const Cart = () => {
                             </button>
                             
                 </div>
-                <span className={styles.itemToatal}>
+                <span className={styles.itemTotal}>
                   ₹{(item.price * item.quantity).toFixed(2)}
                   </span>
                 </div>
-                <span className={styles.priceperItem}>
+                <span className={styles.pricePerItem}>
                   ₹{(item.price.toFixed(2))} each
                   </span>
 
@@ -113,7 +113,7 @@ const Cart = () => {
             <div className={styles.summaryCard}>
               <h2 className={styles.summaryTitle}>Order Summary</h2>
               <div className={styles.summaryBreakdown}>
-                <div classname={styles.summaryRow}>
+                <div className={styles.summaryRow}>
                   <span className={styles.summaryLabel}>
                     Subtotal ({cart.items.length} items)
                     </span>
@@ -126,7 +126,7 @@ const Cart = () => {
       </div>     
       <div className={styles.summaryRow}>
         <span clssName={styles.summaryLabel}>Taxes</span>
-      <span className  ={styles.summaryShipping}>Calculated at checkout</span> 
+      <span className  ={styles.summaryValue}>Calculated at checkout</span> 
         </div>
           </div>
           <div className={styles.summaryTotalSection}>
@@ -137,6 +137,14 @@ const Cart = () => {
               <span className={styles.totalAmount}>₹{total.toFixed(2)}</span>
           </div>
           </div>
+          <button className={styles.checkoutBtn}>
+            Checkout Now
+            <ArrowRight className={styles.checkoutIcon}/>
+              </button>
+              <Link to='/books' className={styles.continueBtn}>
+              <BookOpen className={styles.continueIcon}/>
+              Continue Shopping
+              </Link>
           </div>
 
           </div>
