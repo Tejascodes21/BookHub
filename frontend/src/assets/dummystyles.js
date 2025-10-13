@@ -457,6 +457,10 @@ export const contactPageStyles = {
 };
 
 export const styles = {
+  cardGrid: "flex flex-col md:flex-row gap-6",
+cardItems: "flex-1",
+summaryCard: "w-full md:w-[30%] bg-white p-4 rounded-2xl shadow-md",
+
   container: "min-h-screen bg-gray-50 pt-24 pb-12 px-4 sm:px-6 lg:px-8",
   wrapper: "max-w-6xl mx-auto",
   header: "mb-8 md:mb-12 text-center",
