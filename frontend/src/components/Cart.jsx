@@ -121,11 +121,11 @@ const Cart = () => {
 
                 </div>
     <div className={styles.summaryRow}>
-      <span clssName={styles.summaryLabel}>Shipping</span>
+      <span className={styles.summaryLabel}>Shipping</span>
       <span className  ={styles.summaryShipping}>Free</span> 
       </div>     
       <div className={styles.summaryRow}>
-        <span clssName={styles.summaryLabel}>Taxes</span>
+        <span className={styles.summaryLabel}>Taxes</span>
       <span className  ={styles.summaryValue}>Calculated at checkout</span> 
         </div>
           </div>
